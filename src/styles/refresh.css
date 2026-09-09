@@ -6,6 +6,8 @@ body { background: #fff; }
 .utility-bar { background: #09345c; color: white; font-size: .875rem; }
 .utility-bar > div { max-width: 1240px; margin: auto; padding: .55rem 24px; display: flex; justify-content: space-between; gap: 1rem; }
 .utility-bar a { text-decoration: none; font-weight: 650; }
+.utility-links { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: .4rem 1.2rem; }
+.utility-bar a:hover { text-decoration: underline; }
 .site-header { background: #fff; backdrop-filter: none; box-shadow: none; }
 .nav-shell { min-height: 96px; width: min(1240px, calc(100% - 48px)); position: relative; }
 .brand-mark { width: 184px; height: 76px; padding: 0; flex-shrink: 0; }

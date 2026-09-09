@@ -33,7 +33,7 @@ const canonicalUrl = new URL(canonical, Astro.site ?? Astro.url.origin).toString
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <div class="utility-bar"><div><span>Phoenix, AZ · Care for adults</span><a href={phoneHref}>24/7 Intake · {phone}</a></div></div>
+    <div class="utility-bar"><div><span>Phoenix, AZ · Care for adults</span><div class="utility-links"><a href={phoneHref}>24/7 Intake · {phone}</a><a href="https://www.linkedin.com/company/myhopess/" target="_blank" rel="noopener noreferrer" aria-label="H.O.P.E.S.S. on LinkedIn (opens in a new tab)">LinkedIn <span aria-hidden="true">↗</span></a></div></div></div>
     <header class="site-header">
       <nav class="nav-shell" aria-label="Primary navigation">
         <a class="brand-mark" href="/" aria-label="H.O.P.E.S.S. home"><img src="/hopess-logo.svg" alt="H.O.P.E.S.S." width="180" height="74" /></a>
