@@ -1,0 +1,136 @@
+---
+import IntakeForm from "@/components/IntakeForm.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { insuranceLogos, phone, phoneHref } from "@/data/site";
+---
+
+<BaseLayout
+  title="Intensive Outpatient Program (IOP) in Phoenix, AZ | H.O.P.E.S.S."
+  description="New Intensive Outpatient Program in Phoenix for adults seeking flexible substance abuse treatment and step-down support."
+>
+  <section class="page-hero theme-sky">
+    <div>
+      <h1>Intensive Outpatient Program in Phoenix, AZ.</h1>
+      <p>
+        H.O.P.E.S.S. IOP provides structured, compassionate, evidence-based treatment for people seeking continued support
+        in recovery while maintaining responsibilities at home, work, or in the community.
+      </p>
+      <div class="hero-actions">
+        <a class="button primary" href={phoneHref}>Call {phone}</a>
+        <a class="button secondary" href="#qualifier">Am I a fit for IOP?</a>
+      </div>
+    </div>
+    <figure class="page-hero-media">
+      <img src="/photo-group-session.jpg" alt="Supportive outpatient therapy conversation" loading="eager" />
+    </figure>
+  </section>
+
+  <section class="insurance-banner compact" aria-label="Insurance and payment support">
+    <div>
+      <p class="eyebrow">Coverage support</p>
+      <h2>Ask intake to review residential or IOP coverage.</h2>
+      <p>H.O.P.E.S.S. can review AHCCCS, private insurance, and private-pay questions before the right level of care begins.</p>
+    </div>
+    <div class="insurance-logo-grid" aria-label="Coverage paths H.O.P.E.S.S. can review">
+      {insuranceLogos.map((plan) => (
+        <span class="insurance-logo">
+          <img src={plan.src} alt={plan.alt} loading="lazy" />
+        </span>
+      ))}
+    </div>
+  </section>
+
+  <section class="care-pathways">
+    <div class="section-heading">
+      <h2>Where IOP fits in the treatment path.</h2>
+      <p>
+        IOP can be a step-down after residential treatment or a direct starting point when someone can live safely
+        outside a residential setting but still needs consistent weekly care and accountability.
+      </p>
+    </div>
+    <div class="pathway-grid">
+      <article>
+        <h3>Step down from residential</h3>
+        <p>Continue recovery structure while rebuilding work, family, housing, meetings, and community routines.</p>
+      </article>
+      <article>
+        <h3>Start with outpatient support</h3>
+        <p>Enter care when residential treatment is not the right fit but support, coping skills, and accountability still matter.</p>
+      </article>
+      <article>
+        <h3>Keep practical life moving</h3>
+        <p>Coordinate treatment around employment, transportation, family responsibilities, and coverage questions.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-band">
+    <div class="section-heading">
+      <h2>What IOP can help with.</h2>
+      <p>
+        H.O.P.E.S.S. offers a continuum of care designed to help people build stability, develop healthy coping skills,
+        and create lasting change.
+      </p>
+    </div>
+    <div class="pathway-grid">
+      <article>
+        <h3>Substance use recovery</h3>
+        <p>Support for adults working toward sobriety, relapse prevention, accountability, and healthier daily routines.</p>
+      </article>
+      <article>
+        <h3>Co-occurring concerns</h3>
+        <p>Care can include support for mental health concerns, mood concerns, grief, trauma, and life stressors that affect recovery.</p>
+      </article>
+      <article>
+        <h3>Real-life stability</h3>
+        <p>Practical recovery support may include family needs, employment goals, housing plans, and community-based support.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="split-section">
+    <div>
+      <h2>What treatment may include.</h2>
+      <p class="section-copy">
+        Your treatment plan is based on clinical fit and individual needs. H.O.P.E.S.S. care can include individual,
+        group, and family counseling, treatment for co-occurring disorders, grief and trauma support, and case management
+        services.
+      </p>
+    </div>
+    <div class="content-list">
+      <ul>
+        <li>Individualized treatment planning</li>
+        <li>Group therapy and recovery education</li>
+        <li>Relapse-prevention skills</li>
+        <li>Family involvement when appropriate</li>
+        <li>Support for grief, trauma, mood concerns, and practical life needs</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-band muted" id="qualifier">
+    <div class="section-heading">
+      <h2>Am I a fit for IOP?</h2>
+    </div>
+    <div class="qualifier">
+      <label><input type="checkbox" /> I can safely live outside a residential setting.</label>
+      <label><input type="checkbox" /> I can attend treatment several days per week.</label>
+      <label><input type="checkbox" /> I want treatment that can work around employment or family responsibilities.</label>
+      <label><input type="checkbox" /> I do not need 24/7 residential support or medical detox right now.</label>
+      <p>
+        This self-check stores and sends nothing. If any item feels uncertain, call intake so a real person can help you
+        decide.
+      </p>
+    </div>
+  </section>
+
+  <section class="split-section">
+    <div>
+      <h2>Ask about IOP availability and coverage.</h2>
+      <p class="section-copy">
+        Call for the fastest response. Share personal and clinical details directly with the intake team by phone.
+      </p>
+    </div>
+    <IntakeForm />
+  </section>
+</BaseLayout>

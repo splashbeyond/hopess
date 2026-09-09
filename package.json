@@ -1,0 +1,19 @@
+{
+  "name": "hopess-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/sitemap": "^3.7.3",
+    "@fontsource-variable/libre-franklin": "^5.2.8",
+    "@fontsource-variable/source-sans-3": "^5.2.9",
+    "astro": "^7.0.7",
+    "typescript": "^5.6.3"
+  }
+}

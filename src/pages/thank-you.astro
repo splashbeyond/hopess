@@ -1,0 +1,22 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { phone, phoneHref } from "@/data/site";
+---
+
+<BaseLayout
+  title="Contact Intake | H.O.P.E.S.S."
+  description="Call H.O.P.E.S.S. intake to discuss treatment and next steps."
+  noindex={true}
+>
+  <section class="page-hero">
+    <p class="eyebrow">Contact intake</p>
+    <h1>Let’s talk about your next step.</h1>
+    <p>
+      Online callback requests are not available. Please call our intake team directly to discuss treatment, coverage, or a referral.
+    </p>
+    <div class="hero-actions">
+      <a class="button primary" href={phoneHref}>Call {phone}</a>
+      <a class="button secondary" href="/">Return home</a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="HOPESS">
+  <rect width="64" height="64" rx="14" fill="#09345C"/>
+  <path d="M12 31 32 14l20 17h-8v20H20V31h-8Z" fill="#C91E1A"/>
+  <path d="M25 29h6v7h7v-7h6v18h-6v-7h-7v7h-6V29Z" fill="#FFFFFF"/>
+</svg>

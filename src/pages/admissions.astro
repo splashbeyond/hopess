@@ -1,0 +1,13 @@
+---
+import ContentPage from "@/layouts/ContentPage.astro";
+import { admissionsSteps } from "@/data/site";
+---
+
+<ContentPage
+  title="Admissions for Addiction Treatment | H.O.P.E.S.S."
+  description="How admissions works at H.O.P.E.S.S.: call, verify coverage, and coordinate residential or outpatient treatment."
+  eyebrow="Admissions"
+  heading="How admissions works."
+  intro="Call H.O.P.E.S.S. 24/7 to talk through what is happening, what level of care may fit, and what practical next steps are available for residential treatment, IOP, or therapy support."
+  sections={admissionsSteps.map((step) => ({ title: step.title, body: step.body }))}
+/>

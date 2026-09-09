@@ -1,0 +1,76 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { admissionsSteps, insuranceLogos, phone, phoneHref, programs } from "@/data/site";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": ["MedicalOrganization", "LocalBusiness"],
+  name: "H.O.P.E.S.S.",
+  url: "https://www.myhopess.com/",
+  telephone: "+1-480-660-5775",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "40 E. Indianola Ave",
+    addressLocality: "Phoenix",
+    addressRegion: "AZ",
+    postalCode: "85012",
+    addressCountry: "US"
+  },
+  openingHours: "Mo-Su 00:00-23:59"
+};
+---
+
+<BaseLayout
+  title="Recovery & Residential Treatment in Phoenix | H.O.P.E.S.S."
+  description="Find a next step with H.O.P.E.S.S. in Phoenix. Explore adult residential treatment, intensive outpatient care, therapy, and 24/7 intake support."
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <div class="recovery-home">
+    <section class="recovery-hero" aria-labelledby="hero-heading">
+      <img class="recovery-hero-image" src="/hero-counseling.jpg" alt="A welcoming setting for a counseling conversation" fetchpriority="high" />
+      <div class="recovery-wrap hero-message">
+        <p class="kicker">H.O.P.E.S.S. · Phoenix, Arizona</p>
+        <h1 id="hero-heading">A new way to live.<br />A reason to <em>hope.</em></h1>
+        <p>Recovery begins with connection. Find compassionate care, daily structure, and support for the life ahead.</p>
+        <div class="recovery-actions">
+          <a class="button primary" href="/admissions/">Find your next step <span aria-hidden="true">↗</span></a>
+          <a class="hero-text-link" href="/treatment-programs/">Explore our programs <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="hero-bottom recovery-wrap"><span>Residential care. Outpatient support. Personal growth.</span><a href="#welcome">Discover H.O.P.E.S.S. <span aria-hidden="true">↓</span></a></div>
+    </section>
+
+    <section class="recovery-welcome recovery-wrap" id="welcome">
+      <div><p class="kicker">Who we are</p><h2>A place to feel supported.<br /><em>A path forward.</em></h2></div>
+      <div class="welcome-copy"><p>Welcome to H.O.P.E.S.S.—Homes of Personal Enrichment &amp; Sobriety Services. We support adults facing addiction and mental health concerns as they rebuild stability, relationships, and everyday life.</p><p>Our care starts with the person: their strengths, their goals, and what they need to take the next step.</p><a class="text-link" href="/about/">Get to know H.O.P.E.S.S. <span aria-hidden="true">↗</span></a></div>
+    </section>
+
+    <section class="recovery-facts" aria-label="Care at a glance"><div class="recovery-wrap facts-grid">
+      <div><strong>24/7</strong><span>Office &amp; intake availability</span></div>
+      <div><strong>18+</strong><span>Care for adults</span></div>
+      <div><strong>Phoenix</strong><span>Rooted in our community</span></div>
+      <div><strong>One step</strong><span>A first call can start the conversation</span></div>
+    </div></section>
+
+    <section class="recovery-programs recovery-wrap" id="programs">
+      <div class="program-photo"><img src="/photo-group-session.jpg" alt="A supportive therapy conversation" loading="lazy" width="900" height="1000" /><div class="photo-caption">Connection is part of recovery.</div></div>
+      <div class="program-content"><p class="kicker">What we do</p><h2>Care for where<br />you are <em>today.</em></h2><p>From a structured residential setting to support while living in the community, explore a level of care that fits your needs.</p>
+        <div class="program-link-list">{programs.map((program, index) => <a href={program.href}><span class="program-number">0{index + 1}</span><span>{program.title}{program.badge === 'Coming Soon' && <small>Coming soon</small>}</span><span aria-hidden="true">↗</span></a>)}</div>
+        <a class="text-link" href="/treatment-programs/">Compare treatment programs <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section class="recovery-approach" id="approach"><div class="recovery-wrap approach-grid">
+      <div><p class="kicker">The H.O.P.E.S.S. approach</p><h2>See the person.<br />Build on their<br /><em>strengths.</em></h2><p>Recovery reaches beyond treatment sessions. We work with each person on routines, relationships, and practical goals that support life in the community.</p><a class="button light-button" href="/about/">Our approach <span aria-hidden="true">↗</span></a></div>
+      <div class="approach-principles"><article><span>01 / Connection</span><h3>A supportive place to begin.</h3><p>Individual and group support offers space to be heard, build trust, and work through challenges.</p></article><article><span>02 / Structure</span><h3>Make room for progress.</h3><p>Daily routines and individualized goals help turn recovery into practical steps.</p></article><article><span>03 / Everyday life</span><h3>Look toward what comes next.</h3><p>Support can include life skills, employment, housing, family needs, and care coordination.</p></article></div>
+    </div></section>
+
+    <section class="recovery-next recovery-wrap"><div class="recovery-section-title"><div><p class="kicker">Getting started</p><h2>Let’s take the<br /><em>first step together.</em></h2></div><p>Whether you’re looking for yourself, someone you love, or a person in your care, we can talk through the next step.</p></div>
+      <div class="audience-grid"><a href="/admissions/"><span class="kicker">For individuals &amp; families</span><h3>You don’t need all the answers to call.</h3><p>Learn what to expect, discuss treatment options, and talk through admissions.</p><span class="text-link">Explore admissions <span aria-hidden="true">↗</span></span></a><a href="/provider-referrals/"><span class="kicker">For providers &amp; partners</span><h3>Connect someone with their next level of care.</h3><p>Review our treatment pathways and speak with intake about coordinating a referral.</p><span class="text-link">Referral information <span aria-hidden="true">↗</span></span></a></div>
+    </section>
+
+    <section class="recovery-insurance"><div class="recovery-wrap"><p class="kicker">Insurance &amp; payment</p><h2>Start with a conversation about coverage.</h2><p>Our intake team can review AHCCCS, private insurance, and private-pay questions. Coverage and program eligibility are confirmed individually.</p><div class="recovery-logo-grid">{insuranceLogos.map((plan) => <div><img src={plan.src} alt={plan.alt} loading="lazy" width="180" height="85" /></div>)}</div><a class="text-link" href="/insurance/">Insurance &amp; payment information <span aria-hidden="true">↗</span></a></div></section>
+
+    <section class="recovery-contact" id="intake"><div class="recovery-wrap contact-grid"><div><p class="kicker">Your next chapter starts with a conversation</p><h2>We’re here.<br /><em>Let’s talk.</em></h2><a class="contact-phone" href={phoneHref}>{phone} <span aria-hidden="true">↗</span></a><p>Office and intake available 24/7.<br />40 E. Indianola Ave, Phoenix, AZ 85012</p></div><div class="contact-steps"><h3>What happens when you call?</h3>{admissionsSteps.map((step, i) => <div><span>0{i + 1}</span><p><strong>{step.title}</strong>{step.body}</p></div>)}<a class="button primary" href={phoneHref}>Call intake now <span aria-hidden="true">↗</span></a></div></div></section>
+  </div>
+</BaseLayout>

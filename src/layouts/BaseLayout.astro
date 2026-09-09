@@ -1,0 +1,74 @@
+---
+import "../styles/global.css";
+import "../styles/refresh.css";
+import { phone, phoneHref, programs } from "@/data/site";
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  noindex?: boolean;
+}
+
+const { title, description, canonical = Astro.url.pathname, noindex = false } = Astro.props;
+const canonicalUrl = new URL(canonical, Astro.site ?? Astro.url.origin).toString();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#09345C" />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="utility-bar"><div><span>Phoenix, AZ · Care for adults</span><a href={phoneHref}>24/7 Intake · {phone}</a></div></div>
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="Primary navigation">
+        <a class="brand-mark" href="/" aria-label="H.O.P.E.S.S. home"><img src="/hopess-logo.svg" alt="H.O.P.E.S.S." width="180" height="74" /></a>
+        <div class="desktop-navigation">
+          <details class="nav-group"><summary>Who we are</summary><div class="nav-dropdown"><a href="/about/">About H.O.P.E.S.S.</a><a href="/#approach">Our approach</a><a href="/#intake">Contact &amp; location</a></div></details>
+          <details class="nav-group"><summary>What we do</summary><div class="nav-dropdown"><a href="/treatment-programs/">All treatment programs</a>{programs.map(program => <a href={program.href}>{program.title}{program.badge === 'Coming Soon' ? ' · Coming soon' : ''}</a>)}</div></details>
+          <details class="nav-group"><summary>Getting started</summary><div class="nav-dropdown"><a href="/admissions/">Admissions</a><a href="/insurance/">Insurance &amp; payment</a></div></details>
+          <a href="/provider-referrals/">For providers</a>
+        </div>
+        <a class="button primary header-call" href={phoneHref}>Get help now <span aria-hidden="true">↗</span></a>
+        <details class="mobile-navigation"><summary>Menu</summary><div><a href="/about/">Who we are</a><a href="/treatment-programs/">Treatment programs</a>{programs.map(program => <a class="mobile-sub-link" href={program.href}>{program.title}</a>)}<a href="/admissions/">Admissions</a><a href="/insurance/">Insurance &amp; payment</a><a href="/provider-referrals/">For providers</a><a href="/#intake">Contact &amp; location</a><a href={phoneHref}>Call {phone}</a></div></details>
+      </nav>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="footer-main"><div class="footer-brand"><img src="/hopess-logo.svg" alt="H.O.P.E.S.S." width="180" height="74" /><p>Homes of Personal Enrichment<br />&amp; Sobriety Services</p><p>40 E. Indianola Ave<br />Phoenix, AZ 85012</p><a href={phoneHref}>{phone}</a></div>
+      <div><h2>Explore</h2><a href="/about/">Who we are</a><a href="/treatment-programs/">Treatment programs</a><a href="/residential-treatment-phoenix/">Residential treatment</a><a href="/intensive-outpatient-program-phoenix/">Intensive outpatient</a></div>
+      <div><h2>Connect</h2><a href="/admissions/">Admissions</a><a href="/insurance/">Insurance &amp; payment</a><a href="/provider-referrals/">Provider referrals</a><a href="/#intake">Contact us</a></div></div>
+      <div class="footer-bottom"><span>© {new Date().getFullYear()} H.O.P.E.S.S.</span><div class="footer-links"><a href="/privacy-policy/">Privacy</a><a href="/hipaa-notice/">HIPAA Notice</a><a href="/accessibility/">Accessibility</a><a href="/terms/">Terms</a></div></div>
+    </footer>
+    <a class="mobile-call-bar" href={phoneHref}>Call {phone} - 24/7 Intake</a>
+    <script>
+      const menus = document.querySelectorAll<HTMLDetailsElement>('.nav-group, .mobile-navigation');
+      menus.forEach(menu => menu.addEventListener('toggle', () => {
+        if (menu.open) menus.forEach(other => { if (other !== menu) other.open = false; });
+      }));
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') menus.forEach(menu => { if (menu.open) { menu.open = false; menu.querySelector('summary')?.focus(); } });
+      });
+      document.addEventListener('click', event => {
+        menus.forEach(menu => { if (event.target instanceof Node && !menu.contains(event.target)) menu.open = false; });
+      });
+      document.querySelectorAll('.mobile-navigation a').forEach(link => link.addEventListener('click', () => menus.forEach(menu => { menu.open = false; })));
+    </script>
+  </body>
+</html>
