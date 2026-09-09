@@ -1,5 +1,6 @@
 ---
 import ContentPage from "@/layouts/ContentPage.astro";
+import TeamSection from "@/components/TeamSection.astro";
 ---
 
 <ContentPage
@@ -18,6 +19,10 @@ import ContentPage from "@/layouts/ContentPage.astro";
       body: "Services are designed around each client's treatment needs, recovery goals, family context, and practical barriers such as employment, housing, documents, medical care, and community support."
     },
     {
+      title: "Mental health support",
+      body: "Our care includes adults with General Mental Health (GMH) and Serious Mental Illness (SMI) needs. Case management, life skills, and relapse prevention support recovery in the community."
+    },
+    {
       title: "Inclusive care",
       body: "H.O.P.E.S.S. treats adults ages 18 and older across races, religions, nationalities, sexual identities, and gender identities. The current program identifies as an LGBTQ ally and references Safe Zone training."
     },
@@ -26,4 +31,6 @@ import ContentPage from "@/layouts/ContentPage.astro";
       body: "Our Indianola location at 40 E. Indianola Ave in central Phoenix provides a setting for treatment, partner meetings, and reentry support. Office and intake are available by phone 24/7."
     }
   ]}
-/>
+>
+  <TeamSection />
+</ContentPage>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import TeamSection from "@/components/TeamSection.astro";
 import { admissionsSteps, insuranceLogos, phone, phoneHref, programs } from "@/data/site";
 
 const schema = {
@@ -42,7 +43,7 @@ const schema = {
 
     <section class="recovery-welcome recovery-wrap" id="welcome">
       <div><p class="kicker">Who we are</p><h2>A place to feel supported.<br /><em>A path forward.</em></h2></div>
-      <div class="welcome-copy"><p>Welcome to H.O.P.E.S.S.—Homes of Personal Enrichment &amp; Sobriety Services. We support adults facing addiction and mental health concerns as they rebuild stability, relationships, and everyday life.</p><p>Our care starts with the person: their strengths, their goals, and what they need to take the next step.</p><a class="text-link" href="/about/">Get to know H.O.P.E.S.S. <span aria-hidden="true">↗</span></a></div>
+      <div class="welcome-copy"><p>Welcome to H.O.P.E.S.S.—Homes of Personal Enrichment &amp; Sobriety Services. We support adults facing addiction and mental health concerns as they rebuild stability, relationships, and everyday life.</p><p>We serve adults with General Mental Health (GMH) and Serious Mental Illness (SMI) needs, with care centered on each person’s strengths and goals.</p><a class="text-link" href="/about/">Get to know H.O.P.E.S.S. <span aria-hidden="true">↗</span></a></div>
     </section>
 
     <section class="recovery-facts" aria-label="Care at a glance"><div class="recovery-wrap facts-grid">
@@ -69,6 +70,15 @@ const schema = {
       <div><p class="kicker">IOP &amp; community reentry</p><h2 id="community-heading">Treatment that connects<br />with <em>everyday life.</em></h2><p>Our 4–5 month intensive outpatient program brings treatment, community supervision, and everyday responsibilities together. The pace of each participant’s progress is individualized.</p><a class="text-link" href="/intensive-outpatient-program-phoenix/">Explore IOP &amp; reentry support <span aria-hidden="true">↗</span></a></div>
       <div class="community-details"><article><h3>Job readiness from the start</h3><p>Interview preparation can begin as soon as a participant is ready. Participants may begin working during IOP.</p></article><article><h3>Help with IDs and documents</h3><p>Assistance obtaining new or replacement identification and essential documents supports the next step toward employment and stability.</p></article><article><h3>Support for sponsored housing</h3><p>Housing scholarships help eligible participants with sponsored housing while engaged in IOP. Funding is specifically for housing and depends on current availability.</p></article></div>
     </section>
+
+    <section class="community-partner" aria-labelledby="partner-heading">
+      <div class="recovery-wrap partner-layout">
+        <div><p class="kicker">Community partnership</p><h2 id="partner-heading">Opening doors<br />to <em>employment.</em></h2></div>
+        <div><h3>H.O.P.E.S.S. &amp; Community 43</h3><p>We partner with Community 43 to support its Transitional Employment pilot, creating opportunities to develop work skills and greater independence.</p><a class="text-link" href="/provider-referrals/">Explore community partnerships <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
+
+    <TeamSection />
 
     <section class="facility-section" id="facility" aria-labelledby="facility-heading"><div class="recovery-wrap facility-layout"><figure><img src="/indianola-facility.jpg" alt="H.O.P.E.S.S. Indianola facility at 40 E. Indianola Avenue in Phoenix" width="1536" height="1023" loading="lazy" /><figcaption>40 E. Indianola Ave · Phoenix, AZ 85012</figcaption></figure><div><p class="kicker">Our Indianola location</p><h2 id="facility-heading">Connected to<br /><em>central Phoenix.</em></h2><p>A central Phoenix setting for treatment and ongoing recovery support. Our team helps participants connect care with their everyday goals.</p><p><strong>40 E. Indianola Ave<br />Phoenix, AZ 85012</strong></p><a class="text-link" href="/provider-referrals/">Connect with our team <span aria-hidden="true">↗</span></a></div></div></section>
 

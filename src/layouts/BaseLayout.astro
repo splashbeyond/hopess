@@ -38,7 +38,7 @@ const canonicalUrl = new URL(canonical, Astro.site ?? Astro.url.origin).toString
       <nav class="nav-shell" aria-label="Primary navigation">
         <a class="brand-mark" href="/" aria-label="H.O.P.E.S.S. home"><img src="/hopess-logo.svg" alt="H.O.P.E.S.S." width="180" height="74" /></a>
         <div class="desktop-navigation">
-          <details class="nav-group"><summary>Who we are</summary><div class="nav-dropdown"><a href="/about/">About H.O.P.E.S.S.</a><a href="/#approach">Our approach</a><a href="/#facility">Our facility</a><a href="/#intake">Contact &amp; location</a></div></details>
+          <details class="nav-group"><summary>Who we are</summary><div class="nav-dropdown"><a href="/about/">About H.O.P.E.S.S.</a><a href="/about/#team">Meet our team</a><a href="/#approach">Our approach</a><a href="/#facility">Our facility</a><a href="/#intake">Contact &amp; location</a></div></details>
           <details class="nav-group"><summary>What we do</summary><div class="nav-dropdown"><a href="/treatment-programs/">All treatment programs</a>{programs.map(program => <a href={program.href}>{program.title}{program.badge === 'Coming Soon' ? ' · Coming soon' : ''}</a>)}</div></details>
           <details class="nav-group"><summary>Getting started</summary><div class="nav-dropdown"><a href="/admissions/">Admissions</a><a href="/insurance/">Insurance &amp; payment</a></div></details>
           <a href="/provider-referrals/">For providers</a>

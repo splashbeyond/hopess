@@ -195,3 +195,21 @@ body { background: #fff; }
 .facility-layout figcaption { padding: .9rem 1rem; background: #09345c; color: white; font-size: .875rem; }
 @media(max-width: 900px) { .community-iop, .facility-layout { gap: 2.5rem; } }
 @media(max-width: 680px) { .community-iop, .facility-layout { grid-template-columns: 1fr; } .community-iop, .facility-section { padding-block: 4rem; } }
+
+/* Community and team introductions. */
+.community-partner { background: #edf3f7; padding-block: 4rem; }
+.partner-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+.partner-layout h3 { font-size: 1.5rem; letter-spacing: -.025em; }
+.team-section { width: min(1240px, calc(100% - 64px)); margin-inline: auto; padding-block: 6.5rem; background: white; box-shadow: 0 0 0 100vmax white; clip-path: inset(0 -100vmax); scroll-margin-top: 110px; color: #354a5c; }
+.team-heading { display: flex; justify-content: space-between; align-items: end; gap: 2rem; margin-bottom: 2.5rem; }
+.team-heading h2 { font-size: clamp(2.2rem, 4.1vw, 3.8rem); line-height: 1.1; letter-spacing: -.045em; }
+.team-section .team-eyebrow { margin: 0 0 1.4rem; color: #536b7e; font-size: .875rem; text-transform: uppercase; letter-spacing: .13em; font-weight: 700; }
+.team-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+.team-grid article { border-top: 3px solid #c91e1a; padding-top: 1.6rem; }
+.team-section .team-role { margin: 0 0 .8rem; color: #536b7e; font-size: .875rem; }
+.team-grid h3 { font-size: 1.8rem; line-height: 1.2; letter-spacing: -.025em; }
+.team-grid p { line-height: 1.7; }
+.team-grid a { color: #09345c; font-size: 1rem; text-underline-offset: .25rem; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+@media (max-width: 900px) { .partner-layout { gap: 2.5rem; } .team-heading { align-items: start; flex-direction: column; } }
+@media (max-width: 680px) { .partner-layout, .team-grid { grid-template-columns: 1fr; gap: 2rem; } .team-section { width: calc(100% - 40px); padding-block: 4rem; } .team-heading h2 { font-size: 2.35rem; } }
