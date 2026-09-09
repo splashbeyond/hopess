@@ -180,3 +180,16 @@ body { background: #fff; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+.community-iop { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; padding-block: 6.5rem; }
+.community-iop > div > p:not(.kicker) { margin-top: 1.7rem; }
+.community-details article { padding: 1.4rem 0; border-top: 1px solid #d8e2e9; }
+.community-details h3 { font-size: 1.4rem; letter-spacing: -.025em; }
+.community-details p { margin-bottom: 0; }
+.facility-section { padding-block: 5rem; background: #edf3f7; }
+.facility-layout { display: grid; grid-template-columns: 1.25fr 1fr; align-items: center; gap: 4rem; }
+.facility-layout figure { margin: 0; }
+.facility-layout img { display: block; width: 100%; height: auto; }
+.facility-layout figcaption { padding: .9rem 1rem; background: #09345c; color: white; font-size: .875rem; }
+@media(max-width: 900px) { .community-iop, .facility-layout { gap: 2.5rem; } }
+@media(max-width: 680px) { .community-iop, .facility-layout { grid-template-columns: 1fr; } .community-iop, .facility-section { padding-block: 4rem; } }
