@@ -1,0 +1,17 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { phone, phoneHref } from "@/data/site";
+---
+
+<BaseLayout title="Page Not Found | H.O.P.E.S.S." description="The page you were looking for could not be found." noindex={true}>
+  <section class="page-hero">
+    <p class="eyebrow">404</p>
+    <h1>We can't find that page.</h1>
+    <p>It may have moved. If you are looking for help right now, our team is available 24/7.</p>
+    <div class="hero-actions">
+      <a class="button primary" href={phoneHref}>Call {phone}</a>
+      <a class="button secondary" href="/">Return home</a>
+      <a class="button secondary" href="/treatment-programs/">Treatment programs</a>
+    </div>
+  </section>
+</BaseLayout>

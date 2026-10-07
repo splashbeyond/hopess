@@ -9,5 +9,21 @@ import { admissionsSteps } from "@/data/site";
   eyebrow="Admissions"
   heading="How admissions works."
   intro="Call H.O.P.E.S.S. 24/7 to talk through what is happening, what level of care may fit, and what practical next steps are available for residential treatment, IOP, or therapy support."
-  sections={admissionsSteps.map((step) => ({ title: step.title, body: step.body }))}
-/>
+  sections={[
+    ...admissionsSteps.map((step) => ({ title: step.title, body: step.body })),
+    { title: "Who qualifies", body: "Adults with an active substance use or mental health disorder that disrupts daily life, who can bathe, dress, and feed themselves. Read the full admission criteria and what to expect." },
+    { title: "Who we treat", body: "We treat adults 18 and older across all races, religions, nationalities, sexual identities, and gender identities, in a Safe Zone trained program." },
+    { title: "What to bring", body: "We provide bedding and food. Bring what will make you feel at home, such as a pillow, blanket, or snacks, and keep your cell phone with you. Ask intake what else to bring based on your situation." },
+    { title: "Coverage", body: "We accept AHCCCS, AIHP, Mercy Care, and Banner University Family Care, and can verify your coverage before care begins." }
+  ]}
+>
+  <section class="policy-grid">
+    <article>
+      <h2>Learn more before you call</h2>
+      <p><a href="/admission-criteria/">Admission criteria and what to expect</a></p>
+      <p><a href="/who-we-treat/">Who we treat</a></p>
+      <p><a href="/insurance/">Insurance and payment</a></p>
+      <p><a href="/resources/">Recovery resources</a></p>
+    </article>
+  </section>
+</ContentPage>

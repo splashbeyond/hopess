@@ -9,7 +9,7 @@ interface Props {
   eyebrow: string;
   heading: string;
   intro: string;
-  sections: Array<{ title: string; body: string }>;
+  sections: Array<{ title: string; body: string; items?: string[] }>;
   showForm?: boolean;
 }
 
@@ -71,6 +71,26 @@ const pageThemes: Record<string, { className: string; image: string; alt: string
     image: "/photo-care-team.jpg",
     alt: "Care coordination support"
   },
+  "Who we treat": {
+    className: "theme-warm",
+    image: "/photo-care-team.jpg",
+    alt: "Welcoming care team conversation"
+  },
+  Resources: {
+    className: "theme-sage",
+    image: "/photo-support-desk.jpg",
+    alt: "Support desk with recovery resources"
+  },
+  "Interns & volunteers": {
+    className: "theme-sky",
+    image: "/photo-care-team.jpg",
+    alt: "Care team working together"
+  },
+  Contact: {
+    className: "theme-hope",
+    image: "/photo-support-desk.jpg",
+    alt: "Intake support desk"
+  },
   Accessibility: {
     className: "theme-hope",
     image: "/hero-counseling.jpg",
@@ -111,6 +131,11 @@ const pageTheme = pageThemes[eyebrow] ?? {
       <article>
         <h2>{section.title}</h2>
         <p>{section.body}</p>
+        {section.items && (
+          <ul class="section-list">
+            {section.items.map((item) => <li>{item}</li>)}
+          </ul>
+        )}
       </article>
     ))}
   </section>

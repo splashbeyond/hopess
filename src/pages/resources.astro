@@ -1,0 +1,84 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { phone, phoneHref } from "@/data/site";
+
+const groups = [
+  {
+    title: "Crisis and immediate help",
+    links: [
+      { label: "988 Suicide & Crisis Lifeline (call or text 988)", href: "https://988lifeline.org" },
+      { label: "2-1-1 Arizona, Crisis Response Network", href: "https://211arizona.org" },
+      { label: "Mental health screening (Mental Health America)", href: "https://screening.mhanational.org/screening-tools/" }
+    ]
+  },
+  {
+    title: "Coverage and benefits",
+    links: [
+      { label: "AHCCCS, Arizona's Medicaid agency", href: "https://www.azahcccs.gov" },
+      { label: "AHCCCS Office of Individual and Family Affairs", href: "https://www.azahcccs.gov" },
+      { label: "Applying for disability benefits", href: "https://www.disability-benefits-help.org" }
+    ]
+  },
+  {
+    title: "Meetings and peer support",
+    links: [
+      { label: "Alcoholics Anonymous", href: "https://www.aa.org" },
+      { label: "Find AA meetings in Arizona", href: "https://www.alcoholicsanonymous.com/aa-meetings/arizona" },
+      { label: "12Step.org", href: "https://www.12step.org" },
+      { label: "Arizona Self Help", href: "https://www.arizonaselfhelp.org" },
+      { label: "Support Group Project", href: "https://www.supportgroupproject.org" }
+    ]
+  },
+  {
+    title: "Learn more",
+    links: [
+      { label: "MentalHealth.gov", href: "https://www.mentalhealth.gov" },
+      { label: "National Institute of Mental Health", href: "https://www.nimh.nih.gov" },
+      { label: "American Psychological Association", href: "https://www.apa.org" },
+      { label: "Preventing relapse", href: "https://www.addictiongroup.org/alcohol/addiction-treatment/preventing-relapse" },
+      { label: "Oral health in recovery", href: "https://www.newmouth.com" }
+    ]
+  },
+  {
+    title: "Work and reentry",
+    links: [
+      { label: "Employment resources for people in recovery", href: "https://www.resumebuilder.com" },
+      { label: "Grants for people with felony records", href: "https://freegrantsforfelons.org" },
+      { label: "U.S. Department of Health and Human Services", href: "https://www.hhs.gov" }
+    ]
+  }
+];
+---
+
+<BaseLayout
+  title="Recovery Resources in Arizona | H.O.P.E.S.S. Phoenix"
+  description="Crisis lines, AHCCCS information, recovery meetings, mental health education, and employment resources curated by the H.O.P.E.S.S. team in Phoenix."
+>
+  <section class="page-hero theme-sage">
+    <div>
+      <p class="eyebrow">Resources</p>
+      <h1>Support beyond treatment.</h1>
+      <p>Helpful places to turn for crisis support, coverage, meetings, education, and work. These are outside organizations. H.O.P.E.S.S. is not responsible for their content.</p>
+      <div class="hero-actions">
+        <a class="button primary" href={phoneHref}>Call {phone}</a>
+        <a class="button secondary" href="/admissions/">How admissions works</a>
+      </div>
+    </div>
+    <figure class="page-hero-media">
+      <img src="/photo-support-desk.jpg" alt="Support desk with recovery resources" loading="eager" />
+    </figure>
+  </section>
+
+  <section class="resource-grid" aria-label="Recovery resources">
+    {groups.map((group) => (
+      <article>
+        <h2>{group.title}</h2>
+        <ul>
+          {group.links.map((link) => (
+            <li><a href={link.href} target="_blank" rel="noopener noreferrer">{link.label}<span class="sr-only"> (opens in a new tab)</span></a></li>
+          ))}
+        </ul>
+      </article>
+    ))}
+  </section>
+</BaseLayout>

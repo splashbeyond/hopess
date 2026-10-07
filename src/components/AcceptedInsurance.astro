@@ -1,0 +1,22 @@
+---
+import InsuranceCarousel from "@/components/InsuranceCarousel.astro";
+
+interface Props {
+  heading?: string;
+  note?: string;
+}
+
+const {
+  heading = "Insurance and payment we accept.",
+  note = "Coverage and program eligibility are confirmed individually. Call intake to verify your plan."
+} = Astro.props;
+---
+
+<section class="accepted-insurance" id="accepted-insurance" aria-labelledby="accepted-insurance-heading">
+  <div class="accepted-insurance-copy">
+    <p class="eyebrow">Accepted insurance</p>
+    <h2 id="accepted-insurance-heading">{heading}</h2>
+    <p>{note}</p>
+  </div>
+  <InsuranceCarousel />
+</section>

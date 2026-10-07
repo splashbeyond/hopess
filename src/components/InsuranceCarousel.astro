@@ -1,0 +1,19 @@
+---
+import { insuranceLogos } from "@/data/site";
+
+// Four logos repeated so one set is wider than any screen; the track holds two sets and loops at -50%.
+const set = [...insuranceLogos, ...insuranceLogos, ...insuranceLogos];
+---
+
+<div class="insurance-carousel" role="group" aria-roledescription="carousel" aria-label="Accepted insurance plans">
+  <p class="sr-only">Accepted plans: {insuranceLogos.map((plan) => plan.alt).join(", ")}.</p>
+  <div class="insurance-track" aria-hidden="true">
+    {[0, 1].map(() => (
+      <ul>
+        {set.map((plan) => (
+          <li><img src={plan.src} alt="" loading="lazy" width="180" height="90" /></li>
+        ))}
+      </ul>
+    ))}
+  </div>
+</div>

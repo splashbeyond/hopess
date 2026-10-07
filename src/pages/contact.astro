@@ -1,0 +1,66 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { address, admissionsEmail, operationsEmail, phone, phoneHref, social } from "@/data/site";
+---
+
+<BaseLayout
+  title="Contact H.O.P.E.S.S. | Phoenix Treatment Intake 24/7"
+  description="Call, email, or visit H.O.P.E.S.S. at 40 E. Indianola Ave in Phoenix. Office and intake are available 24 hours a day, 7 days a week."
+>
+  <section class="page-hero theme-hope">
+    <div>
+      <p class="eyebrow">Contact</p>
+      <h1>We're here. Let's talk.</h1>
+      <p>Office and intake are available 24 hours a day, 7 days a week. Calling is the fastest way to reach a person.</p>
+      <div class="hero-actions">
+        <a class="button primary" href={phoneHref}>Call {phone}</a>
+        <a class="button secondary" href={`mailto:${admissionsEmail}`}>Email admissions</a>
+      </div>
+    </div>
+    <figure class="page-hero-media">
+      <img src="/indianola-facility.jpg" alt="H.O.P.E.S.S. Indianola facility at 40 E. Indianola Avenue" loading="eager" />
+    </figure>
+  </section>
+
+  <section class="policy-grid">
+    <article>
+      <h2>Intake and admissions</h2>
+      <address class="contact-detail">
+        <a href={phoneHref}>{phone}</a>
+        <a href={`mailto:${admissionsEmail}`}>{admissionsEmail}</a>
+        <span>Monday to Sunday, 24/7</span>
+      </address>
+    </article>
+    <article>
+      <h2>Visit us</h2>
+      <address class="contact-detail">
+        <span>{address.street}</span>
+        <span>{address.city}, {address.state} {address.zip}</span>
+        <a href="https://www.google.com/maps/search/?api=1&query=40+E+Indianola+Ave+Phoenix+AZ+85012" target="_blank" rel="noopener noreferrer">Get directions<span class="sr-only"> (opens in a new tab)</span></a>
+      </address>
+    </article>
+    <article>
+      <h2>Volunteers and operations</h2>
+      <address class="contact-detail">
+        <a href={`mailto:${operationsEmail}`}>{operationsEmail}</a>
+        <a href="/interns-and-volunteers/">Internships and volunteering</a>
+      </address>
+    </article>
+    <article>
+      <h2>Providers and referrals</h2>
+      <p>Parole officers, care teams, and referral partners can start a conversation with our referral contact.</p>
+      <p><a href="/provider-referrals/">Provider referral information</a></p>
+    </article>
+    <article>
+      <h2>Follow along</h2>
+      <address class="contact-detail">
+        <a href={social.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
+        <a href={social.facebook} target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only"> (opens in a new tab)</span></a>
+      </address>
+    </article>
+    <article>
+      <h2>In a crisis?</h2>
+      <p>If you or someone near you is in immediate danger or considering self-harm, call or text <a href="tel:988">988</a>, or call 911.</p>
+    </article>
+  </section>
+</BaseLayout>

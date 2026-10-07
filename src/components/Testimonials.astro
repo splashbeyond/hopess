@@ -1,0 +1,34 @@
+---
+// Quotes are excerpts from graduate testimonial videos on myhopess.com, shared without names.
+const testimonials = [
+  "H.O.P.E.S.S. gave me my life back. From being homeless to having nothing but the shirt on my back, I still can't believe the change. There's nothing but support, from the therapy to the groups to the meetings. It all works, especially if you put in the effort.",
+  "H.O.P.E.S.S. really provided a structure for me over a period of time that I hadn't received anywhere else.",
+  "It taught me that I can't do this alone. I need to ask for help. It taught me how to ask for help.",
+  "You have to want the treatment in order to get through it successfully. It's not easy. There are bumps all along the way, but it gets easier to handle.",
+  "I get to live my life again, and I get to enjoy life again, and be me again, and know that I'm worth it.",
+  "Here at H.O.P.E.S.S., I have obtained a new family. It's welcoming to come back and see everybody."
+];
+---
+
+<section class="testimonials recovery-wrap" id="stories" aria-labelledby="testimonials-heading">
+  <div class="testimonials-heading">
+    <p class="kicker">Stories of recovery</p>
+    <h2 id="testimonials-heading">In their <em>own words.</em></h2>
+    <p>Graduates of H.O.P.E.S.S. share what recovery has meant to them. Experiences vary, and results are not guaranteed.</p>
+  </div>
+  <ul class="testimonial-grid">
+    {testimonials.map((quote) => (
+      <li class="testimonial-card">
+        <figure>
+          <div class="testimonial-stars" role="img" aria-label="5 out of 5 stars">
+            {[0, 1, 2, 3, 4].map(() => (
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M12 2.5l2.94 5.96 6.58.96-4.76 4.64 1.12 6.55L12 17.52l-5.88 3.09 1.12-6.55L2.48 9.42l6.58-.96L12 2.5z" /></svg>
+            ))}
+          </div>
+          <blockquote><p>{quote}</p></blockquote>
+          <figcaption>Anonymous</figcaption>
+        </figure>
+      </li>
+    ))}
+  </ul>
+</section>

@@ -1,7 +1,8 @@
 ---
 import IntakeForm from "@/components/IntakeForm.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { insuranceLogos, phone, phoneHref } from "@/data/site";
+import AcceptedInsurance from "@/components/AcceptedInsurance.astro";
+import { phone, phoneHref } from "@/data/site";
 ---
 
 <BaseLayout
@@ -24,20 +25,7 @@ import { insuranceLogos, phone, phoneHref } from "@/data/site";
     </figure>
   </section>
 
-  <section class="insurance-banner compact" aria-label="Insurance and payment support">
-    <div>
-      <p class="eyebrow">Coverage support</p>
-      <h2>Ask intake to review residential or IOP coverage.</h2>
-      <p>H.O.P.E.S.S. can review AHCCCS, private insurance, and private-pay questions before the right level of care begins.</p>
-    </div>
-    <div class="insurance-logo-grid" aria-label="Coverage paths H.O.P.E.S.S. can review">
-      {insuranceLogos.map((plan) => (
-        <span class="insurance-logo">
-          <img src={plan.src} alt={plan.alt} loading="lazy" />
-        </span>
-      ))}
-    </div>
-  </section>
+  <AcceptedInsurance heading="Ask intake to review residential or IOP coverage." note="H.O.P.E.S.S. can review AHCCCS, AIHP, Mercy Care, and Banner University Family Care coverage before the right level of care begins." />
 
   <section class="care-pathways">
     <div class="section-heading">
@@ -102,6 +90,11 @@ import { insuranceLogos, phone, phoneHref } from "@/data/site";
         <li>Group therapy and recovery education</li>
         <li>Relapse-prevention skills</li>
         <li>Family involvement when appropriate</li>
+        <li>Individual counseling and relapse-prevention education</li>
+        <li>Co-occurring mental health support</li>
+        <li>Life skills development</li>
+        <li>Case management and discharge planning</li>
+        <li>Peer support and recovery resources</li>
         <li>Support for grief, trauma, mood concerns, and practical life needs</li>
       </ul>
     </div>

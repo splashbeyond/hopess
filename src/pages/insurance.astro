@@ -1,5 +1,6 @@
 ---
 import ContentPage from "@/layouts/ContentPage.astro";
+import AcceptedInsurance from "@/components/AcceptedInsurance.astro";
 ---
 
 <ContentPage
@@ -7,7 +8,7 @@ import ContentPage from "@/layouts/ContentPage.astro";
   description="Insurance and AHCCCS information for residential and outpatient addiction treatment at H.O.P.E.S.S. in Phoenix."
   eyebrow="Insurance & AHCCCS"
   heading="Verify coverage before treatment becomes another barrier."
-  intro="H.O.P.E.S.S. intake can review AHCCCS, private insurance, and private-pay questions so cost and coverage do not stop the first conversation."
+  intro="H.O.P.E.S.S. intake can review AHCCCS, AIHP, Mercy Care, and Banner University Family Care coverage so cost and coverage do not stop the first conversation."
   sections={[
     {
       title: "Coverage review",
@@ -18,12 +19,14 @@ import ContentPage from "@/layouts/ContentPage.astro";
       body: "The team can discuss residential treatment, IOP, individual therapy, group therapy, and grief or trauma support while helping you understand what questions to ask about benefits."
     },
     {
-      title: "AHCCCS and private options",
-      body: "H.O.P.E.S.S. can review AHCCCS plans, private insurance, and private-pay options without promising that every plan or service will be approved."
+      title: "Plans we accept",
+      body: "H.O.P.E.S.S. accepts AHCCCS, AIHP, Mercy Care, and Banner University Family Care. Approval of a specific service is confirmed individually and is not guaranteed."
     },
     {
       title: "Fastest path",
       body: "Call 24/7 for the fastest response. Share personal and clinical details directly with the intake team by phone."
     }
   ]}
-/>
+>
+  <AcceptedInsurance />
+</ContentPage>

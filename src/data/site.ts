@@ -1,9 +1,17 @@
 export const phone = "(480) 660-5775";
 export const phoneHref = "tel:+14806605775";
+export const admissionsEmail = "admissions@hopess.com";
+export const operationsEmail = "operations@myhopess.com";
+export const address = { street: "40 E. Indianola Ave", city: "Phoenix", state: "AZ", zip: "85012" };
+export const social = {
+  linkedin: "https://www.linkedin.com/company/myhopess/",
+  facebook: "https://www.facebook.com/myhopess/"
+};
 
 export const navigation = [
   { href: "/treatment-programs/", label: "Treatment Programs" },
   { href: "/admissions/", label: "Admissions" },
+  { href: "/who-we-treat/", label: "Who We Treat" },
   { href: "/insurance/", label: "Insurance" },
   { href: "/provider-referrals/", label: "For Providers" },
   { href: "/about/", label: "About" }
@@ -51,26 +59,13 @@ export const programs = [
   }
 ];
 
-export const insurancePlans = [
-  "AHCCCS",
-  "Mercy Care",
-  "Banner",
-  "Health Choice",
-  "GRIC",
-  "ACH",
-  "Private insurance",
-  "Private pay"
-];
+export const insurancePlans = ["AHCCCS", "AIHP", "Mercy Care", "Banner University Family Care"];
 
 export const insuranceLogos = [
   { name: "AHCCCS", src: "/insurance/ahcccs.png", alt: "AHCCCS" },
-  { name: "Mercy Care", src: "/insurance/mercy-care.png", alt: "Mercy Care" },
-  { name: "Banner", src: "/insurance/banner-university-family-care.png", alt: "Banner University Family Care" },
-  { name: "Health Choice", src: "/insurance/health-choice.png", alt: "Blue Cross Blue Shield of Arizona Health Choice" },
-  { name: "GRIC", src: "/insurance/gila-river-indian-community.png", alt: "Gila River Indian Community" },
-  { name: "Arizona Complete Health", src: "/insurance/arizona-complete-health.png", alt: "Arizona Complete Health" },
-  { name: "Private Insurance", src: "/insurance/private-insurance.png", alt: "Private insurance" },
-  { name: "Private Pay", src: "/insurance/private-pay.png", alt: "Private pay" }
+  { name: "AIHP", src: "/insurance/aihp-navajo-seal.png", alt: "American Indian Health Program (AIHP)" },
+  { name: "Mercy Care", src: "/insurance/mercy-care.svg", alt: "Mercy Care" },
+  { name: "Banner", src: "/insurance/banner-university-family-care.webp", alt: "Banner University Family Care" }
 ];
 
 export const admissionsSteps = [
